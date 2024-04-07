@@ -6,6 +6,11 @@ Configuration files for my setups on Windows(for work) and various distributions
 <img src="https://img.shields.io/liberapay/goal/dotMavriQ.svg?logo=liberapay">
 
 dotfiles are currently sorted into two bigger folders separating the computers that they operate on.
-* dotHQ
-* Iptop
+
+| NAME      | COMPUTER                   | OS                 |
+|-----------|----------------------------|--------------------|
+| **dotHQ**     | Beelink SER6 PRO           | Ubuntu             |
+| **dotMargui** | Lenovo IdeaPad 5 14ABA7    | Windows 11 Home    |
+
+
 
