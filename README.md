@@ -7,10 +7,11 @@ Configuration files for my setups on Windows(for work) and various distributions
 
 dotfiles are currently sorted into two bigger folders separating the computers that they operate on.
 
-| NAME      | COMPUTER                   | OS                 |
-|-----------|----------------------------|--------------------|
-| **dotHQ**     | Beelink SER6 PRO           | Ubuntu             |
-| **dotMargui** | Lenovo IdeaPad 5 14ABA7    | Windows 11 Home    |
+| NAME          | COMPUTER                   | OS             |
+|---------------|----------------------------|----------------|
+| **dotBook**   | Macbook Pro M3 15,6        | MacOS          |
+| **dotHQ**     | Beelink SER6 PRO           | Ubuntu         |
+| **dotMargui** | Lenovo IdeaPad 5 14ABA7    | Windows 11 Home|
 
 
 
