@@ -5,7 +5,7 @@ Configuration files for my setups on Windows(for work) and various distributions
 
 <img src="https://img.shields.io/liberapay/goal/dotMavriQ.svg?logo=liberapay">
 
-dotfiles are currently sorted into two bigger folders separating the computers that they operate on.
+dotfiles are currently sorted into three bigger folders separating the computers that they operate on.
 
 | NAME          | COMPUTER                   | OS             |
 |---------------|----------------------------|----------------|
