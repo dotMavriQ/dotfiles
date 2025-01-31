@@ -10,7 +10,7 @@ dotfiles are currently sorted into three bigger folders separating the computers
 | NAME          | COMPUTER                   | OS             |
 |---------------|----------------------------|----------------|
 | **dotBook**   | Macbook Pro M3 15,6        | MacOS          |
-| **dotHQ**     | Beelink SER6 PRO           | Ubuntu         |
+| **dotHQ**     | Beelink SER6 PRO           | Fedora 41      |
 | **dotMargui** | Lenovo IdeaPad 5 14ABA7    | Windows 11 Home|
 
 
