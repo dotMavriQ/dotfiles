@@ -1,0 +1,12 @@
+# ~/.config/starship.toml.tmpl
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+{{ if eq .chezmoi.hostname "JJ-NordHealth" }}
+[username]
+show_always = true
+[hostname]
+format = "[@$hostname](bold yellow) "
+{{ end }}
