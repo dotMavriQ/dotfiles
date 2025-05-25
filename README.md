@@ -1,17 +1,15 @@
 # dotfiles
-Configuration files for my setups on Windows(for work) and various distributions of Linux.
+
+Configuration files for my setups on Windows (for work) and various distributions of Linux.
 
 ---
 
-<img src="https://img.shields.io/liberapay/goal/dotMavriQ.svg?logo=liberapay">
+<img src="https://img.shields.io/liberapay/goal/dotMavriQ.svg?logo=liberapay" alt="LiberaPay goal badge">
 
-dotfiles are currently sorted into three bigger folders separating the computers that they operate on.
+My dotfiles are organized by machine, with each setup tailored to its environment:
 
-| NAME          | COMPUTER                   | OS             |
-|---------------|----------------------------|----------------|
-| **dotBook**   | Macbook Pro M3 15,6        | MacOS          |
-| **dotHQ**     | Beelink SER6 PRO           | Fedora 41      |
-| **dotMargui** | Lenovo IdeaPad 5 14ABA7    | Windows 11 Home|
-
-
-
+| Name             | Computer                 | OS               |
+|------------------|--------------------------|------------------|
+| **JayJay@NordHealth** | ThinkPad X1 Nano          | Windows 11 Pro   |
+| **dotHQ**        | Beelink SER6 PRO           | Fedora 41        |
+| **dotMargui**    | Lenovo IdeaPad 5 14ABA7    | Windows 11 Home  |
