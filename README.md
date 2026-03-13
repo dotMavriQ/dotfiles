@@ -12,4 +12,4 @@ My dotfiles are organized by machine, with each setup tailored to its environmen
 |------------------|--------------------------|------------------|
 | **JayJay@NordHealth** | ThinkPad X1 Nano          | Windows 11 Pro   |
 | **dotHQ**        | Beelink SER6 PRO           | Fedora 42        |
-| **dotMargui**    | Lenovo IdeaPad 5 14ABA7    | Windows 11 Home  |
+| **Daisydot**     | Lenovo IdeaPad 5 14ABA7    | Fedora 43        |
