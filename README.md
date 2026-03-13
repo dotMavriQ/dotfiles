@@ -12,6 +12,8 @@ configuration files organized by machine.
 
 ## daisydot
 
+![daisydot desktop](daisydot/screenshot.png)
+
 gruvbox material dark everywhere. sway + waybar + rofi + dunst.
 
 ```
