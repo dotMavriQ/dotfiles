@@ -40,4 +40,4 @@ notifications: dunst
 
 ---
 
-<img src="https://img.shields.io/liberapay/goal/dotMavriQ.svg?logo=liberapay" alt="LiberaPay goal badge">
+<img src="https://img.shields.io/liberapay/receives/dotMavriQ.svg?logo=liberapay" alt="LiberaPay donations">
