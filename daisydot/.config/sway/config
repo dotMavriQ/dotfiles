@@ -1,0 +1,189 @@
+# Sway config - Gruvbox Material Dark
+
+# Variables
+set $mod Mod4
+set $term ghostty
+set $menu rofi -show drun -show-icons -icon-theme Numix-Circle
+set $lock swaylock -f -c 282828
+
+# Gruvbox Material colors
+set $bg       #282828
+set $bg1      #32302f
+set $bg2      #3c3836
+set $bg3      #504945
+set $fg       #d4be98
+set $red      #ea6962
+set $orange   #e78a4e
+set $yellow   #d8a657
+set $green    #a9b665
+set $aqua     #89b482
+set $blue     #7daea3
+set $purple   #d3869b
+set $grey     #928374
+
+# Font
+font pango:JetBrainsMono Nerd Font 10
+
+# Output (1920x1080 laptop)
+output eDP-1 {
+    resolution 1920x1080
+    position 0 0
+    scale 1
+    subpixel rgb
+    adaptive_sync on
+    bg /home/dotmavriq/Pictures/covilhabg_gruvbox.jpg fill
+}
+
+# Input
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+    dwt enabled
+    accel_profile adaptive
+    pointer_accel 0.3
+}
+
+input type:keyboard {
+    xkb_layout se,gb,pt
+    xkb_options caps:escape
+    repeat_delay 300
+    repeat_rate 50
+}
+
+# Window decoration
+default_border pixel 2
+default_floating_border pixel 2
+gaps inner 6
+gaps outer 2
+smart_gaps on
+smart_borders on
+
+# Colors                 border   bg       text     indicator  child_border
+client.focused           $yellow  $bg1     $fg      $aqua      $yellow
+client.focused_inactive  $bg3     $bg1     $grey    $bg3       $bg3
+client.unfocused         $bg2     $bg      $grey    $bg2       $bg2
+client.urgent            $red     $red     $bg      $red       $red
+
+# Waybar
+bar {
+    swaybar_command waybar
+}
+
+# Idle
+exec swayidle -w \
+    timeout 300 '$lock' \
+    timeout 600 'swaymsg "output * power off"' \
+    resume 'swaymsg "output * power on"' \
+    before-sleep '$lock'
+
+# Autostart
+exec dbus-update-activation-environment --all
+exec dunst
+exec syncthing serve --no-browser
+exec_always gsettings set org.gnome.desktop.interface gtk-theme 'Gruvbox-Dark'
+exec_always gsettings set org.gnome.desktop.interface icon-theme 'Numix-Circle'
+exec_always gsettings set org.gnome.desktop.interface font-name 'JetBrainsMono Nerd Font 10'
+seat seat0 xcursor_theme "Capitaine Cursors (Gruvbox)" 24
+exec_always gsettings set org.gnome.desktop.interface cursor-theme "Capitaine Cursors (Gruvbox)"
+exec_always gsettings set org.gnome.desktop.interface cursor-size 24
+
+# Key bindings - basics
+bindsym $mod+Return exec $term
+bindsym $mod+d exec $menu
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaymsg exit
+
+# Browser
+bindsym $mod+w exec pgrep -x vivaldi-bin && swaymsg '[app_id="vivaldi-stable"]' focus || vivaldi-stable
+
+# Locking
+bindsym $mod+l exec $lock
+
+# Screenshots
+bindsym Print exec grim ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png
+bindsym $mod+s exec grim ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png
+bindsym $mod+Shift+s exec grim -g "$(slurp)" ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png
+
+# Media keys
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move windows
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Workspaces
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# Move to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# Layout
+bindsym $mod+b splith
+bindsym $mod+Shift+b splitv
+bindsym $mod+Shift+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+f fullscreen
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+
+# Resize mode
+mode "resize" {
+    bindsym Left resize shrink width 20px
+    bindsym Down resize grow height 20px
+    bindsym Up resize shrink height 20px
+    bindsym Right resize grow width 20px
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Floating rules
+for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="blueman-manager"] floating enable
+for_window [app_id="nm-connection-editor"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="dialog"] floating enable
+
+# Keyboard layout toggle (se/gb/pt)
+bindsym $mod+i input type:keyboard xkb_switch_layout next
+
+# Clipboard
+exec wl-paste --watch cliphist store
+bindsym $mod+v exec bash -c 'cliphist list | rofi -dmenu -p "Clipboard" | cliphist decode | wl-copy'
+

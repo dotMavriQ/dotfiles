@@ -1,0 +1,93 @@
+* {
+    bg:         #282828;
+    bg1:        #32302f;
+    bg2:        #3c3836;
+    bg3:        #504945;
+    fg:         #d4be98;
+    grey:       #928374;
+    yellow:     #d8a657;
+    red:        #ea6962;
+    green:      #a9b665;
+    aqua:       #89b482;
+    blue:       #7daea3;
+
+    background-color:   @bg;
+    text-color:         @fg;
+    border-color:       @yellow;
+
+    spacing: 0;
+}
+
+window {
+    width: 40%;
+    background-color: @bg;
+    border: 2px;
+    border-color: @yellow;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+mainbox {
+    children: [inputbar, listview];
+    spacing: 12px;
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: @bg1;
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @yellow;
+    padding: 0 8px 0 0;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+    placeholder: "Search...";
+    placeholder-color: @grey;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    fixed-height: true;
+    spacing: 4px;
+    scrollbar: false;
+}
+
+element {
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element selected.normal {
+    background-color: @bg3;
+    text-color: @yellow;
+}
+
+element-icon {
+    size: 24px;
+    padding: 0 8px 0 0;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
