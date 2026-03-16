@@ -1,0 +1,50 @@
+[user]
+	name = Jonatan Jansson
+	email = social@dotmavriq.life
+[core]
+	pager = delta
+	excludesfile = ~/.gitignore_global
+	editor = nano
+[interactive]
+	diffFilter = delta --color-only --features=side-by-side
+[delta]
+	features = line-numbers decorations side-by-side
+	line-numbers = true
+[delta "decorations"]
+	commit-decoration-style = bold yellow box
+	file-style = bold blue
+	hunk-header-style = magenta
+[push]
+	default = simple
+[pull]
+	rebase = true
+[rebase]
+	autostash = true
+[merge]
+	conflictStyle = zdiff3
+[color]
+	ui = auto
+[alias]
+	co = checkout
+	cob = checkout -b
+	st = status -sb
+	cm = commit -m
+	ca = commit --amend --no-edit
+	br = branch -vv
+	last = log -1 --stat
+	lg = log --graph --decorate --pretty=format:'%C(yellow)%h%Creset%C(auto)%d %C(blue)%an%Creset %Cgreen%ad%Creset %s' --date=relative --abbrev-commit
+	stash-all = stash push -u
+	unstage = restore --staged --
+	undo = reset --soft HEAD~1
+[init]
+	defaultBranch = main
+[fetch]
+	prune = true
+[includeIf "gitdir:~/Code/work/"]
+    path = .gitconfig-work
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential

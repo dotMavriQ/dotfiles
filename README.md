@@ -8,7 +8,7 @@ configuration files organized by machine.
 |------|----------|----|--------|
 | **Daisydot** | Lenovo IdeaPad 5 14ABA7 (Ryzen 5 5625U, 14GB, 512GB NVMe) | Fedora 43 / Sway | active |
 | **dotHQ** | Beelink SER6 PRO | Fedora 42 | active |
-| **JayJay@NordHealth** | ThinkPad X1 Nano | Windows 11 Pro | work |
+| **Nanodot** | ThinkPad X1 Nano | Windows 11 Pro / WSL2 | work |
 
 ## daisydot
 
@@ -37,6 +37,28 @@ shell: zsh + starship + atuin + zoxide + fzf + eza + bat + fd + dust + btop
 terminal: ghostty (primary), foot (backup)
 launcher: rofi
 notifications: dunst
+
+## nanodot
+
+work machine running WSL2. gruvbox dark prompt, hardened claude code setup.
+
+```
+nanodot/
+├── .zshrc
+├── .gitconfig
+├── .gitignore_global
+├── .config/
+│   ├── starship/starship.toml
+│   ├── btop/btop.conf
+│   └── containers/containers.conf
+└── .claude/
+    ├── inspect-repo.sh
+    └── settings.json
+```
+
+shell: zsh + starship + fzf + nvm + bun + bat + fd
+git: delta (side-by-side diffs), zdiff3 merge conflicts, autostash rebase
+claude code: pre-flight repo scanner, sandboxed execution, deny rules for secrets
 
 ---
 
