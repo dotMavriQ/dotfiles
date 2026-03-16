@@ -78,6 +78,26 @@ alias ....="cd ../../.."
 
 mkcd() { mkdir -p "$1" && cd "$1" }
 
+music() {
+  if [[ "$1" == "update" ]]; then
+    rmpc update
+  else
+    rmpc "$@"
+  fi
+}
+
+headphones() {
+  local mac="E8:EE:CC:BB:1A:F7"
+  local connected=$(echo -e "info $mac\nquit" | bluetoothctl 2>/dev/null | grep "Connected: yes")
+  if [[ -n "$connected" ]]; then
+    echo "Disconnecting soundcore Space Q45..."
+    echo -e "disconnect $mac\nquit" | bluetoothctl 2>/dev/null
+  else
+    echo "Connecting soundcore Space Q45..."
+    echo -e "power on\nconnect $mac\nquit" | bluetoothctl 2>/dev/null
+  fi
+}
+
 # ──────────────────────────────────────
 # Tool inits (keep at bottom)
 # ──────────────────────────────────────

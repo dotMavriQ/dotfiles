@@ -1,0 +1,50 @@
+/* Gruvbox Dark - Calibre Viewer Theme */
+
+body {
+  background-color: #282828 !important;
+  color: #ebdbb2 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #fabd2f !important;
+}
+
+a, a:visited {
+  color: #83a598 !important;
+}
+
+a:hover {
+  color: #8ec07c !important;
+}
+
+blockquote {
+  color: #bdae93 !important;
+  border-left: 3px solid #504945 !important;
+}
+
+code, pre {
+  background-color: #1d2021 !important;
+  color: #fb4934 !important;
+}
+
+hr {
+  border-color: #504945 !important;
+}
+
+table, th, td {
+  border-color: #504945 !important;
+}
+
+th {
+  background-color: #3c3836 !important;
+  color: #ebdbb2 !important;
+}
+
+td {
+  background-color: #282828 !important;
+  color: #ebdbb2 !important;
+}
+
+img {
+  opacity: 0.9;
+}
