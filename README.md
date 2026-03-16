@@ -40,6 +40,8 @@ notifications: dunst
 
 ## nanodot
 
+![nanodot desktop](nanodot/screenshot.png)
+
 work machine running WSL2. gruvbox dark prompt, hardened claude code setup.
 
 ```
